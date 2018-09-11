@@ -1,0 +1,195 @@
+---
+layout: page
+title: "About"
+description: "Hey, this is Hux."
+header-img: "img/about-bg.jpg"
+---
+
+<!-- Language Selector -->
+<!-- <select onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" selected> Chinese </option>
+    <option value="1"> English </option>
+</select>
+ -->
+<!-- Chinese Version -->
+<!-- <div class="zh post-container">
+    <blockquote>
+        Cloud Computing Developer
+    </blockquote>
+    Cloud Computing Everything<br><br>XXX<br><br>XXX<br><br>XX<br><br>XXX<br><br>XXX<br><br>XXX<br>
+    <br>XXX
+
+    <p style="text-align:right;">
+        —— <a href=""></a>
+    </p>
+
+</div> -->
+
+<!-- English Version -->
+<div class="en post-container">
+    <blockquote>
+        Cloud Computing Developer
+    </blockquote>
+
+    <p>
+        1. The end is near.
+    </p>
+
+    <p>
+        2. You’re strong. But I could snap my fingers, and you’d all cease to exist.
+    </p>
+
+    <p>
+        3. Fun isn’t something one considers when balancing the universe. But this… does put a smile on my face.
+    </p>
+
+    <p>
+        4. Stark… you have my respect. I hope the people of Earth will remember you.
+    </p>
+
+    <p>
+        5. When I’m done, half of humanity will still exist. Perfectly balanced, as all things should be. I hope they remember you.
+    </p>
+
+    <p>
+        6. You should have gone for the head.
+    </p>
+
+    <p>
+        7. I know what it’s like to lose. To feel so desperately that you’re right, yet to fail nonetheless. Dread it. Run from it. Destiny still arrives. Or should I say, I have.
+
+    </p>
+
+    <p>
+        8. You’re a great fighter, Gamora. Come. Let me help you.
+    </p>
+
+    <p>
+        9. Going to bed hungry. Scrounging for scraps. Your planet was on the brink of collapse. I was the one who stopped that. You know what’s happened since then? The children born have known nothing but full bellies and clear skies. It’s a paradise.
+    </p>
+
+    <p>
+        10. I’m the only one who knows that. At least I’m the only who has the will to act on it. For a time, you had that same will. As you fought by my side, daughter.
+    </p>
+
+    <p>
+        11. I ignored my destiny once, I can not do that again. Even for you. I’m sorry Little one.
+
+    </p>
+
+    <p>
+        12. With all six stones, I can simply snap my fingers, they would all cease to exist. I call that mercy.”
+        “And then what?
+    </p>
+
+    <p>
+        13. Thanos: “Daughter.”
+        Gamora: “Did you do it?”
+        Thanos: “Yes.”
+        Gamora: “What did it cost?”
+        Thanos: “Everything.”
+    </p>
+
+    <p>
+        14. Your optimism is misplaced, Asgardian.
+    </p>
+
+    <p>
+        15. You’re strong. Me… You’re generous. Me… But I never taught you to lie. That’s why you’re so bad at it. Where is the Soul Stone?
+    </p>
+
+    <p>
+        16. You should choose your words wisely
+    </p>
+
+    <p>
+        17. The hardest choices require the strongest wills.
+    </p>
+
+
+
+    <p style="text-align:right;">
+    -- Mad Titan Thanos
+    </p>
+
+</div>
+
+<!-- Handle Language Change -->
+<script type="text/javascript">
+    var $zh = document.querySelector(".zh");
+    var $en = document.querySelector(".en");
+    function onLanChange(index){
+        if(index == 0){
+            $zh.style.display = "block";
+            $en.style.display = "none";
+        }else{
+            $en.style.display = "block";
+            $zh.style.display = "none";
+        }
+    }
+    onLanChange(0);
+</script>
+
+
+
+{% if site.duoshuo_username %}
+<!-- 多说评论框 start -->
+<div class="comment">
+    <div class="ds-thread"
+    {% if site.duoshuo_username == "huxblog" %}
+        data-thread-id="1187623191091085319"
+    {% else %}
+        data-thread-key="{{site.duoshuo_username}}/about"
+    {% endif %}
+
+    data-title="{{page.title}}"
+    data-url="{{site.url}}/about/"></div>
+</div>
+<!-- 多说评论框 end -->
+
+<!-- Duoshuo hacking -->
+<input id="dsUser" type="hidden" value="{{site.duoshuo_username}}"  />
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User hacking by Hux
+    var _user = document.getElementById('dsUser').value;
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+{% endif %}
+
+
+{% if site.disqus_username %}
+<!-- disqus 评论框 start -->
+<div class="comment">
+    <div id="disqus_thread" class="disqus-thread">
+
+    </div>
+</div>
+<!-- disqus 评论框 end -->
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "{{site.disqus_username}}";
+    var disqus_identifier = "{{site.disqus_username}}/{{page.url}}";
+    var disqus_url = "{{site.url}}{{page.url}}";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+{% endif %}
